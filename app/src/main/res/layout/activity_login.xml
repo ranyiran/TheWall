@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:src="@drawable/img_Login_text" />
+            android:src="@drawable/img_login_text" />
     </LinearLayout>
 
     <View
@@ -57,7 +57,7 @@
                 android:text="@string/account" />
 
             <EditText
-                android:id="@+id/regEtUsername"
+                android:id="@+id/logEtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="8" />
@@ -79,7 +79,7 @@
                 android:text="@string/password" />
 
             <EditText
-                android:id="@+id/regEtPassword"
+                android:id="@+id/logEtPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
@@ -87,12 +87,21 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/regBtnReg"
+            android:id="@+id/logBtnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="#336699"
-            android:text="@string/regist"
+            android:text="@string/login"
             android:textColor="#ffffff" />
     </LinearLayout>
+    <Button
+        android:id="@+id/logBtnReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#336699"
+        android:textColor="#fff"
+        android:text="@string/regist"
+        />
 </LinearLayout>

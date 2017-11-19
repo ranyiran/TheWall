@@ -1,5 +1,6 @@
 package com.ran.thewal.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +16,18 @@ import com.ran.thewal.bean.AccountUser;
 import com.ran.thewal.utils.I2GO;
 
 import cn.bmob.v3.listener.SaveListener;
+/**
+ * @作者 Ranyiran
+ * @介绍 注册界面的实现
+ * @时间 2017/11/19 14:40
+ *
+ *       版本：
+ *              1.先通过手机验证码后进入资料填写界面。
+ *              2.直接用户名密码注册。进入界面后再进行资料的填写
+ *              3.用户名，密码填写。验证手机号码。最后用手机号码进行登陆。
+ *
+ *
+ */
 
 public class RegisteActivity extends AppCompatActivity implements View.OnClickListener {
     EditText mEtUsername, mEtPassword;
@@ -67,7 +80,7 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
                     public void onSuccess() {
                         dialog.dismiss();
                         Toast.makeText(RegisteActivity.this, "注册成功正在跳转", Toast.LENGTH_SHORT).show();
-                        I2GO.Go2MainActivity(mContext);
+                        I2GO.Go2LoginActivity((Activity) mContext);
                     }
 
                     @Override
