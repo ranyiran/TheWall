@@ -26,6 +26,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 I2GO.Go2LoginActivity((Activity) mContext);
+                ((Activity) mContext).finish();
             }
         }, 2000);
     }

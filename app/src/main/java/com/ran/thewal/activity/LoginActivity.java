@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (user != null) {
             //跳转到MainActivity
             I2GO.Go2MainActivity((Activity) mContext);
+            ((Activity) mContext).finish();
         } else {
             return;
         }
@@ -98,6 +99,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Log.i("Biaobai", "Login is Success!!");
                         Toast.makeText(LoginActivity.this, "欢迎用户:" + user.getUsername().toString() + "登录!", Toast.LENGTH_SHORT).show();
                         I2GO.Go2MainActivity((Activity) mContext);
+                        ((Activity) mContext).finish();
                     }
 
                     @Override
