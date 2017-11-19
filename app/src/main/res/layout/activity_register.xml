@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
 
     android:orientation="vertical"
-    tools:context="com.ran.thewal.activity.RegisteActivity">
+    tools:context=".activity.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:src="@drawable/img_regist_text" />
+            android:src="@drawable/img_register_text" />
     </LinearLayout>
 
     <View

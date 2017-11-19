@@ -29,7 +29,7 @@ import cn.bmob.v3.listener.SaveListener;
  *
  */
 
-public class RegisteActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     EditText mEtUsername, mEtPassword;
     Button mBtnReg;
     String username, password;
@@ -38,7 +38,7 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registe);
+        setContentView(R.layout.activity_register);
         mContext = this;
         initView();
         setListener();
@@ -79,7 +79,7 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onSuccess() {
                         dialog.dismiss();
-                        Toast.makeText(RegisteActivity.this, "注册成功正在跳转", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "注册成功正在跳转", Toast.LENGTH_SHORT).show();
                         I2GO.Go2LoginActivity((Activity) mContext);
                         ((Activity) mContext).finish();
                     }
@@ -89,10 +89,10 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
                         dialog.dismiss();
                         switch (i) {
                             case 202:
-                                Toast.makeText(RegisteActivity.this, "该用户名已经存在!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "该用户名已经存在!", Toast.LENGTH_SHORT).show();
                                 break;
                             case 203:
-                                Toast.makeText(RegisteActivity.this, "该邮箱已注册!请直接登陆!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "该邮箱已注册!请直接登陆!", Toast.LENGTH_SHORT).show();
                                 break;
                         }
                         Log.i("BiaoBai", "i=" + i + " " + "s=" + s);

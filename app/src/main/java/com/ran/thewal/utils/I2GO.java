@@ -6,7 +6,7 @@ import android.content.Intent;
 import com.ran.thewal.R;
 import com.ran.thewal.activity.LoginActivity;
 import com.ran.thewal.activity.MainActivity;
-import com.ran.thewal.activity.RegisteActivity;
+import com.ran.thewal.activity.RegisterActivity;
 
 /**
  * Created by Slim Shady on 2017/11/18.
@@ -27,7 +27,7 @@ public class I2GO {
         mContext.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
     public static void Go2RegistActivity(Activity mContext) {
-        Intent intent = new Intent(mContext, RegisteActivity.class);
+        Intent intent = new Intent(mContext, RegisterActivity.class);
         mContext.startActivity(intent);
         mContext.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }

@@ -33,7 +33,7 @@
         </activity>
         <activity android:name=".activity.CameraActivity" />
         <activity
-            android:name=".activity.RegisteActivity"
+            android:name=".activity.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.MainActivity"
