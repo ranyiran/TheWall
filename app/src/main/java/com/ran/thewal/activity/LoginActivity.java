@@ -114,6 +114,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 dialog.setMessage("正在跳转……");
                 dialog.show();
                 I2GO.Go2RegistActivity((Activity) mContext);
+                ((Activity) mContext).finish();
                 dialog.dismiss();
                 break;
         }

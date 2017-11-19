@@ -81,6 +81,7 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
                         dialog.dismiss();
                         Toast.makeText(RegisteActivity.this, "注册成功正在跳转", Toast.LENGTH_SHORT).show();
                         I2GO.Go2LoginActivity((Activity) mContext);
+                        ((Activity) mContext).finish();
                     }
 
                     @Override
