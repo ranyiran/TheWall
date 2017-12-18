@@ -10,7 +10,7 @@
     <string name="main_title_suixin">随心爱</string>
     <string name="main_title_findandlost">功能</string>
     <string name="main_title_noname">匿名</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_toolbar_title">通知</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

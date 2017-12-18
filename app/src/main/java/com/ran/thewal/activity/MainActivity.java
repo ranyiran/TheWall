@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 //右下角点击事件
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //往下面弹出一个Snackbar
+                //下一步是弹出三个Button还是直接跳入一个新的Activity。
+                Snackbar.make(view, "", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -59,18 +61,7 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        //初始化Adapter
-        pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
-        mainViewPager.setAdapter(pagerAdapter);
-        //将TabLayout和ViewPager绑定在一起，使双方各自的改变都能直接影响另一方，解放了开发人员对双方变动事件的监听
-        mTabLayout.setupWithViewPager(mainViewPager);
 
-        //往tab里面传值。
-        tabTheHert = mTabLayout.getTabAt(0);
-        tabFindAndLost = mTabLayout.getTabAt(1);
-        tabNoname = mTabLayout.getTabAt(2);
-        //设置tab的图标
-        //tabTheHert.setIcon(R.drawable.apptitle);
         navigationView.setNavigationItemSelectedListener(this);
         onNavigationViewClick();
     }
@@ -87,7 +78,18 @@ public class MainActivity extends AppCompatActivity
      * 初始化控制
      */
     private void initControls() {
+        //初始化Adapter
+        pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
+        mainViewPager.setAdapter(pagerAdapter);
+        //将TabLayout和ViewPager绑定在一起，使双方各自的改变都能直接影响另一方，解放了开发人员对双方变动事件的监听
+        mTabLayout.setupWithViewPager(mainViewPager);
 
+        //往tab里面传值。
+        tabTheHert = mTabLayout.getTabAt(0);
+        tabFindAndLost = mTabLayout.getTabAt(1);
+        tabNoname = mTabLayout.getTabAt(2);
+        //设置tab的图标
+        //tabTheHert.setIcon(R.drawable.apptitle);
     }
 
     /**
