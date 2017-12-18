@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,17 +21,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ran.thewal.R;
+import com.ran.thewal.adapter.MyFragmentPagerAdapter;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     NavigationView navigationView;
+    Toolbar toolbar;//Toolbar
+    TabLayout.Tab tabFindAndLost;
+    TabLayout.Tab tabNoname;
+    TabLayout.Tab tabTheHert;
+
+    //主界面ViewPager的实例化
+    ViewPager mainViewPager;
+    TabLayout mTabLayout;
+    MyFragmentPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        initView();
+        initData();
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,17 +53,51 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //初始化Adapter
+        pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
+        mainViewPager.setAdapter(pagerAdapter);
+        //将TabLayout和ViewPager绑定在一起，使双方各自的改变都能直接影响另一方，解放了开发人员对双方变动事件的监听
+        mTabLayout.setupWithViewPager(mainViewPager);
 
+        //往tab里面传值。
+        tabTheHert = mTabLayout.getTabAt(0);
+        tabFindAndLost = mTabLayout.getTabAt(1);
+        tabNoname = mTabLayout.getTabAt(2);
+        //设置tab的图标
+        //tabTheHert.setIcon(R.drawable.apptitle);
         navigationView.setNavigationItemSelectedListener(this);
         onNavigationViewClick();
+    }
+
+
+    /**
+     * 初始化App数据
+     */
+    private void initData() {
+        initControls();
+    }
+
+    /**
+     * 初始化控制
+     */
+    private void initControls() {
+
+    }
+
+    /**
+     * 实例化控件找到id。
+     */
+    private void initView() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTabLayout = (TabLayout) findViewById(R.id.tableLayout);
+        mainViewPager = (ViewPager) findViewById(R.id.vpager_four);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
     }
 
     /**
@@ -182,5 +229,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 }

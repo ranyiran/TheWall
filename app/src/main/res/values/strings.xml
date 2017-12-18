@@ -7,5 +7,11 @@
     <string name="password">密  码:</string>
     <string name="login">登 录</string>
     <string name="regist">注 册</string>
+    <string name="main_title_suixin">随心爱</string>
+    <string name="main_title_findandlost">功能</string>
+    <string name="main_title_noname">匿名</string>
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

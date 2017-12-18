@@ -25,7 +25,8 @@ public class SplashActivity extends AppCompatActivity {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                I2GO.Go2LoginActivity((Activity) mContext);
+                I2GO.Go2MainActivity((Activity) mContext);
+               /* I2GO.Go2LoginActivity((Activity) mContext);*/
                 ((Activity) mContext).finish();
             }
         }, 2000);

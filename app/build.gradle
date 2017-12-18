@@ -26,10 +26,12 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    //CDN文件服务使用okhttp相关包进行文件的上传和下载（必填）
     compile 'com.android.support:appcompat-v7:25.1.1'
     compile 'com.android.support:design:25.1.1'
     compile 'cn.bmob.android:bmob-sdk:3.4.6'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'//CDN文件服务使用okhttp相关包进行文件的上传和下载（必填）
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.squareup.okio:okio:1.4.0'
     compile 'cn.bmob.android:http-legacy:1.0'
+    compile 'com.android.support:support-v4:25.1.1'
 }
