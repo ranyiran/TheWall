@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity
             //照相机点击事件
             Intent intent = new Intent(this, CameraActivity.class);
             this.startActivity(intent);
+            this.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -225,8 +226,8 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+       // DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
